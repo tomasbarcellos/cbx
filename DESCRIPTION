@@ -1,12 +1,18 @@
 Package: cbx
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Dados do 87 Campeonato Brasileiro de Xadrex Absoluto
+Version: 0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Tomás", "Barcellos", role = c("aut", "cre"))
+Description: Data package campeonatos da CBX.
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Imports: 
+    chess,
+    magrittr,
+    rchess,
+    rvest
+Depends: 
+    R (>= 2.10)
+LazyData: true
