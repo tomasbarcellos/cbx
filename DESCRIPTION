@@ -2,7 +2,8 @@ Package: cbx
 Title: Dados do 87 Campeonato Brasileiro de Xadrex Absoluto
 Version: 0.0.1
 Authors@R: 
-    person("Tomás", "Barcellos", role = c("aut", "cre"))
+    person("Tomás", "Barcellos", , "tomasbarcellos@gmail.com", 
+    role = c("aut", "cre"))
 Description: Data package campeonatos da CBX.
 License: GPL (>= 3)
 Encoding: UTF-8

@@ -1,0 +1,69 @@
+---
+output: github_document
+always_allow_html: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# cbx
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+O objetivo desse pacote é brincar com dados de xadrez no R.
+
+## Installation
+
+``` r
+# install.packages("devtools")
+devtools::install_github("tomasbarcellos/cbx")
+```
+
+## Examplo
+
+Esse pacote contem dados do 87o Campeonato Brasileiro Absoluto Final Aberta.
+
+```{r example, warning=FALSE, message=FALSE}
+library(cbx)
+library(dplyr)
+glimpse(campeonato)
+```
+
+É possível buscar partidas das formas usadas regularmentes no `tidyverse`.
+
+```{r}
+campeonato %>% 
+  filter(resultado == "1/2-1/2")
+```
+
+
+A ideia é poder usar o `data.frame` para passar partidas especificas com o 
+auxílio de outros pacotes como `rchess` ou `chess`.
+
+
+```{r}
+set.seed(123)
+partida_aleat <- campeonato[sample(nrow(campeonato), 1), ]
+
+chsspgn <- rchess::Chess$new()
+pgn <- partida_aleat$pgn[[1]]
+pgn <- paste(pgn, collapse = "\n")
+
+chsspgn$load_pgn(pgn)
+plot(chsspgn)
+```
+
+
+
+
+
